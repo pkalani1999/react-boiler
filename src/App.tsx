@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import apiClient from "./api/apiClient";
-import About from "./components/About";
+import About from "@components/About";
 
 const App = () => {
   useEffect(() => {
