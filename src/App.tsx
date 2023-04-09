@@ -1,22 +1,12 @@
-import { useEffect } from "react";
+import { Provider } from "react-redux";
+import { store } from "./store";
 import About from "@components/About";
-import { getFakeData } from "./api/service";
 
 const App = () => {
-  useEffect(() => {
-    getFakeData()
-      .then((response) => {
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
   return (
-    <div>
+    <Provider store={store}>
       <About />
-    </div>
+    </Provider>
   );
 };
 
