@@ -1,11 +1,10 @@
 import { useEffect } from "react";
-import apiClient from "./api/apiClient";
 import About from "@components/About";
+import { getFakeData } from "./api/service";
 
 const App = () => {
   useEffect(() => {
-    apiClient
-      .get("")
+    getFakeData()
       .then((response) => {
         console.log(response.data);
       })

@@ -1,11 +1,13 @@
 import axios, { AxiosInstance } from "axios";
 
 const apiClient: AxiosInstance = axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com/posts",
+  baseURL: "",
 });
 
 apiClient.interceptors.request.use(
   (config) => {
+    // config.headers["Authorization"] = "Bearer your_token_here";
+    config.headers["Content-Type"] = "application/json";
     return config;
   },
   (error) => {
